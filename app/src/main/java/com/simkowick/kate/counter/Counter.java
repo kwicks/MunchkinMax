@@ -94,11 +94,9 @@ public class Counter extends AppCompatActivity {
 
     }
 
-    // One Time Use cards subtract
+    // One Time Use cards subtract. This number may be negative
     public void subtractOneX(View view) {
-        if(oneTimeLevelValue > 0) {
-            oneTimeLevelValue--;
-        }
+        oneTimeLevelValue--;
 
         final TextView oneTimeLevel = (TextView) findViewById(R.id.oneTimeLevel);
         oneTimeLevel.setText(String.valueOf(oneTimeLevelValue));
