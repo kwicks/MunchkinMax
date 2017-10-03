@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:onClick="onClickSubtractBase"
+                android:onClick="subtractBase"
                 android:text="- 1"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp" />
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:onClick="onClickAddBase"
+                android:onClick="addBase"
                 android:text="+ 1"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp" />
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:onClick="onClickSubtractEquip"
+                android:onClick="subtractEquip"
                 android:text="- 1"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp" />
@@ -115,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onClickAddEquip"
+                android:onClick="addEquip"
                 android:gravity="center"
                 android:text="+ 1"
                 tools:layout_editor_absoluteX="0dp"
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:onClick="onClickSubtractOneX"
+                android:onClick="subtractOneX"
                 android:text="- 1"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp" />
@@ -174,7 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onClickAddOneX"
+                android:onClick="addOneX"
                 android:gravity="center"
                 android:text="+ 1"
                 tools:layout_editor_absoluteX="0dp"
@@ -251,7 +251,7 @@
                 android:layout_span="1"
                 android:layout_weight="1"
                 android:gravity="center">
-                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -267,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:onClick="onClickEndTurn"
+                    android:onClick="endTurn"
                     android:text="End Turn"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />

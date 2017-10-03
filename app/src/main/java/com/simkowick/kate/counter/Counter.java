@@ -17,10 +17,10 @@ import android.widget.TextView;
 
 public class Counter extends AppCompatActivity {
 
-    public int bLevel = 1;
-    public int eLevel = 0;
-    public int oLevel = 0;
-    public int tLevel = 0;
+    public int baseLevelValue = 1;
+    public int equipmentLevelValue = 0;
+    public int oneTimeLevelValue = 0;
+    public int totalLevelValue = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,93 +34,93 @@ public class Counter extends AppCompatActivity {
     }
 
     // Add one level to Base
-    public void onClickAddBase(View view) {
+    public void addBase(View view) {
 
-        if(bLevel < 10) {
-            bLevel++;
+        if(baseLevelValue < 10) {
+            baseLevelValue++;
         }
-        if(bLevel == 10){
+        if(baseLevelValue == 10){
             Snackbar.make(view, "Winner, Level 10!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
 
         final TextView baseLevel = (TextView) findViewById(R.id.baseLevel);
-        baseLevel.setText(String.valueOf(bLevel));
+        baseLevel.setText(String.valueOf(baseLevelValue));
         printFinalLevel();
 
     }
 
     // Subtract one level from Base.  Base must be between 1 and 10
-    public void onClickSubtractBase(View view) {
-        if(bLevel <= 10 && bLevel > 1)
-            bLevel--;
+    public void subtractBase(View view) {
+        if(baseLevelValue <= 10 && baseLevelValue > 1)
+            baseLevelValue--;
 
         final TextView baseLevel = (TextView) findViewById(R.id.baseLevel);
-        baseLevel.setText(String.valueOf(bLevel));
+        baseLevel.setText(String.valueOf(baseLevelValue));
         printFinalLevel();
 
     }
 
     // Equipment cards add
-    public void onClickAddEquip(View view) {
-        eLevel++;
+    public void addEquip(View view) {
+        equipmentLevelValue++;
 
         final TextView equipLevel = (TextView) findViewById(R.id.equipLevel);
-        equipLevel.setText(String.valueOf(eLevel));
+        equipLevel.setText(String.valueOf(equipmentLevelValue));
         printFinalLevel();
 
     }
 
     // Equipment cards subtract
-    public void onClickSubtractEquip(View view) {
-        if(eLevel > 0) {
-            eLevel--;
+    public void subtractEquip(View view) {
+        if(equipmentLevelValue > 0) {
+            equipmentLevelValue--;
         }
 
         final TextView equipLevel = (TextView) findViewById(R.id.equipLevel);
-        equipLevel.setText(String.valueOf(eLevel));
+        equipLevel.setText(String.valueOf(equipmentLevelValue));
         printFinalLevel();
 
     }
 
     // One Time Use cards add
-    public void onClickAddOneX(View view) {
+    public void addOneX(View view) {
 
-        oLevel++;
+        oneTimeLevelValue++;
 
         final TextView oneTimeLevel = (TextView) findViewById(R.id.oneTimeLevel);
-        oneTimeLevel.setText(String.valueOf(oLevel));
+        oneTimeLevel.setText(String.valueOf(oneTimeLevelValue));
         printFinalLevel();
 
     }
 
     // One Time Use cards subtract
-    public void onClickSubtractOneX(View view) {
-        if(oLevel > 0) {
-            oLevel--;
+    public void subtractOneX(View view) {
+        if(oneTimeLevelValue > 0) {
+            oneTimeLevelValue--;
         }
 
         final TextView oneTimeLevel = (TextView) findViewById(R.id.oneTimeLevel);
-        oneTimeLevel.setText(String.valueOf(oLevel));
+        oneTimeLevel.setText(String.valueOf(oneTimeLevelValue));
         printFinalLevel();
 
     }
 
     // resets one time use items to 0
-    public void onClickEndTurn(View view){
-        oLevel = 0;
+    public void endTurn(View view){
+        oneTimeLevelValue = 0;
 
         final TextView oneTimeLevel = (TextView) findViewById(R.id.oneTimeLevel);
-        oneTimeLevel.setText(String.valueOf(oLevel));
+        oneTimeLevel.setText(String.valueOf(oneTimeLevelValue));
         printFinalLevel();
     }
 
     // Adds up and prints your level to the screen
     public void printFinalLevel (){
 
-        tLevel = bLevel + eLevel + oLevel;
+        totalLevelValue = baseLevelValue + equipmentLevelValue + oneTimeLevelValue;
         final TextView totalLevel = (TextView) findViewById(R.id.totalLevel);
-        totalLevel.setText(String.valueOf(tLevel));
+        totalLevel.setText(String.valueOf(totalLevelValue));
 
     }
 
@@ -150,18 +150,18 @@ public class Counter extends AppCompatActivity {
 
     //resets levels for a new round
     public void resetGame(){
-        bLevel = 1;
-        oLevel = 0;
-        eLevel = 0;
+        baseLevelValue = 1;
+        oneTimeLevelValue = 0;
+        equipmentLevelValue = 0;
 
         final TextView baseLevel = (TextView) findViewById(R.id.baseLevel);
-        baseLevel.setText(String.valueOf(bLevel));
+        baseLevel.setText(String.valueOf(baseLevelValue));
 
         final TextView equipLevel = (TextView) findViewById(R.id.equipLevel);
-        equipLevel.setText(String.valueOf(eLevel));
+        equipLevel.setText(String.valueOf(equipmentLevelValue));
 
         final TextView oneTimeLevel = (TextView) findViewById(R.id.oneTimeLevel);
-        oneTimeLevel.setText(String.valueOf(oLevel));
+        oneTimeLevel.setText(String.valueOf(oneTimeLevelValue));
 
         printFinalLevel();
 
